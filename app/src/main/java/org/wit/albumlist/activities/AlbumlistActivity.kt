@@ -33,12 +33,16 @@ class AlbumlistActivity : AppCompatActivity(), AnkoLogger {
             albumlist = intent.extras?.getParcelable<AlbumlistModel>("albumlist_edit")!!
             albumlistTitle.setText(albumlist.title)
             description.setText(albumlist.description)
+            genre.setText(albumlist.genre)
+            artist.setText(albumlist.artist)
             btnAdd.setText(R.string.save_albumlist)
         }
 
         btnAdd.setOnClickListener() {
             albumlist.title = albumlistTitle.text.toString()
             albumlist.description = description.text.toString()
+            albumlist.genre = genre.text.toString()
+            albumlist.artist = artist.text.toString()
             if (albumlist.title.isEmpty()) {
                 toast(R.string.enter_albumlist_title)
             } else {

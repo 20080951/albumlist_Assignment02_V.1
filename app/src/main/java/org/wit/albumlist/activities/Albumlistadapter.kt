@@ -4,7 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_albumlist.view.*
 import kotlinx.android.synthetic.main.card_albumlist.view.*
+import kotlinx.android.synthetic.main.card_albumlist.view.albumlistTitle
+import kotlinx.android.synthetic.main.card_albumlist.view.description
+import kotlinx.android.synthetic.main.card_albumlist.view.genre
+import kotlinx.android.synthetic.main.card_albumlist.view.artist
 import org.wit.albumlist.R
 import org.wit.albumlist.models.AlbumlistModel
 
@@ -39,6 +44,11 @@ class AlbumlistAdapter constructor(
         fun bind(albumlist: AlbumlistModel, listener: AlbumlistListener) {
             itemView.albumlistTitle.text = albumlist.title
             itemView.description.text = albumlist.description
+            itemView.artist.text = albumlist.genre
+            itemView.artist.text = albumlist.artist
+
+
+
             itemView.setOnClickListener { listener.onAlbumlistClick(albumlist) }
         }
     }

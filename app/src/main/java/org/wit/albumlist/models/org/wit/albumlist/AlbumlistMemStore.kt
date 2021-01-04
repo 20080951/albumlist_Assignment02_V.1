@@ -29,6 +29,8 @@ class AlbumlistMemStore : AlbumlistStore, AnkoLogger {
         if (foundAlbumlist != null) {
             foundAlbumlist.title = albumlist.title
             foundAlbumlist.description = albumlist.description
+            foundAlbumlist.genre = albumlist.genre
+            foundAlbumlist.artist = albumlist.artist
             logAll()
         }
     }

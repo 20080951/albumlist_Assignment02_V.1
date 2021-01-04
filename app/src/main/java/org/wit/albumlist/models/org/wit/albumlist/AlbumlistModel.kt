@@ -6,4 +6,6 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class AlbumlistModel(var id: Long = 0,
                           var title: String = "",
-                          var description: String = "") : Parcelable
+                          var description: String = "",
+                          var genre: String = "",
+                          var artist: String = "" ) : Parcelable

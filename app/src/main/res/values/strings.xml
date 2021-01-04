@@ -3,6 +3,8 @@
     <string name="button_addAlbumlist">Add Album</string>
     <string name="hint_albumlistTitle">Album Title</string>
     <string name="hint_albumlistDescription">Album Description </string>
+    <string name="hint_albumlistGenre">Album Genre </string>
+    <string name="hint_albumlistArtist">Album Artist </string>
     <string name="menu_addAlbumlist">Add</string>
     <string name="menu_cancelAlbumlist">Cancel</string>
     <string name="enter_albumlist_title"> Please enter a Album Title </string>
