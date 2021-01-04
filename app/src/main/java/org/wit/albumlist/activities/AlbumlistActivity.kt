@@ -1,10 +1,12 @@
 package org.wit.albumlist.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_albumlist.*
+import kotlinx.android.synthetic.main.activity_albumlist_list.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
@@ -70,5 +72,9 @@ class AlbumlistActivity : AppCompatActivity(), AnkoLogger {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        recyclerView.adapter?.notifyDataSetChanged()
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
