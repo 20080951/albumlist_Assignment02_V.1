@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Albumlist</string>
-    <string name="button_addAlbumlist">Add Albumlist</string>
+    <string name="button_addAlbumlist">Add Album</string>
     <string name="hint_albumlistTitle">Album Title</string>
+    <string name="hint_albumlistDescription">Album Description </string>
+    <string name="menu_addAlbumlist">Add</string>
+    <string name="menu_cancelAlbumlist">Cancel</string>
+    <string name="enter_albumlist_title"> Please enter a Album Title </string>
+    <string name="save_albumlist"> Save Album </string>
 </resources>
