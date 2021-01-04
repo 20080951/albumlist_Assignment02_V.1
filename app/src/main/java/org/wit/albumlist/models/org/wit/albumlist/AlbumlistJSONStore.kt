@@ -54,4 +54,8 @@ class AlbumlistJSONStore : AlbumlistStore, AnkoLogger {
         val jsonString = read(context, JSON_FILE)
         albumlists = Gson().fromJson(jsonString, listType)
     }
+    override fun delete(albumlist: AlbumlistModel) {
+        albumlists.remove(albumlist)
+        serialize()
+    }
 }

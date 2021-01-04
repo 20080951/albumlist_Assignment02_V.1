@@ -10,7 +10,7 @@ import org.wit.albumlist.models.AlbumlistStore
 
 class MainApp : Application(), AnkoLogger {
 
-    lateint var albumlists: AlbumlistStore
+    lateinit var albumlists: AlbumlistStore
 
 
     override fun onCreate() {
