@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">albumlist</string>
+    <string name="app_name">Albumlist</string>
+    <string name="button_addAlbumlist">Add Albumlist</string>
+    <string name="hint_albumlistTitle">Album Title</string>
 </resources>
