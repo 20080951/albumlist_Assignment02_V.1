@@ -11,6 +11,9 @@ import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import org.jetbrains.anko.toast
 import org.wit.albumlist.R
+import org.wit.albumlist.helpers.readImage
+import org.wit.albumlist.helpers.readImageFromPath
+import org.wit.albumlist.helpers.showImagePicker
 import org.wit.albumlist.main.MainApp
 import org.wit.albumlist.models.AlbumlistModel
 
@@ -18,6 +21,7 @@ class AlbumlistActivity : AppCompatActivity(), AnkoLogger {
 
     var albumlist = AlbumlistModel()
     lateinit var app: MainApp
+    val IMAGE_REQUEST = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +41,7 @@ class AlbumlistActivity : AppCompatActivity(), AnkoLogger {
             description.setText(albumlist.description)
             genre.setText(albumlist.genre)
             artist.setText(albumlist.artist)
+            albumlistImage.setImageBitmap(readImageFromPath(this, albumlist.image))
             btnAdd.setText(R.string.save_albumlist)
         }
 
@@ -58,6 +63,9 @@ class AlbumlistActivity : AppCompatActivity(), AnkoLogger {
             setResult(AppCompatActivity.RESULT_OK)
             finish()
         }
+        chooseImage.setOnClickListener {
+            showImagePicker(this, IMAGE_REQUEST)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -73,8 +81,18 @@ class AlbumlistActivity : AppCompatActivity(), AnkoLogger {
         }
         return super.onOptionsItemSelected(item)
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        recyclerView.adapter?.notifyDataSetChanged()
         super.onActivityResult(requestCode, resultCode, data)
+
+        when (requestCode) {
+            IMAGE_REQUEST -> {
+                if (data != null) {
+                    albumlist.image = data.getData().toString()
+                    albumlistImage.setImageBitmap(readImage(this,resultCode,data))
+                }
+            }
+        }
+
     }
 }

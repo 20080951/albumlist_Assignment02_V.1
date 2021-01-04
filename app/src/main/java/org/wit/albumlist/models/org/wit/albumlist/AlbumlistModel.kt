@@ -8,4 +8,5 @@ data class AlbumlistModel(var id: Long = 0,
                           var title: String = "",
                           var description: String = "",
                           var genre: String = "",
-                          var artist: String = "" ) : Parcelable
+                          var artist: String = "",
+                          var image: String = "") : Parcelable

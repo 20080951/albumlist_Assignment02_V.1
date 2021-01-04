@@ -31,6 +31,7 @@ class AlbumlistMemStore : AlbumlistStore, AnkoLogger {
             foundAlbumlist.description = albumlist.description
             foundAlbumlist.genre = albumlist.genre
             foundAlbumlist.artist = albumlist.artist
+            foundAlbumlist.image = albumlist.image
             logAll()
         }
     }
