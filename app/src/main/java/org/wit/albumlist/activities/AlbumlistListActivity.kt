@@ -28,7 +28,14 @@ class AlbumlistListActivity : AppCompatActivity(), AlbumlistListener {
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = AlbumlistAdapter(app.albumlists.findAll(), this)
+       loadAlbumlists()
+    }
+    private fun loadAlbumlists(){
+        showAlbumlists(app.albumlists.findAll())
+    }
+    fun showAlbumlists (albumlists: List<AlbumlistModel>){
+        recyclerView.adapter = AlbumlistAdapter(albumlists, this)
+        recyclerView.adapter?.notifyDataSetChanged()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
