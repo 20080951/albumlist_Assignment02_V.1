@@ -11,4 +11,5 @@
     <string name="save_albumlist"> Save Album </string>
     <string name="button_addImage"> Add Image </string>
     <string name="select_albumlist_image">Select album image</string>
+    <string name="change_albumlist_image">Change album image</string>
 </resources>

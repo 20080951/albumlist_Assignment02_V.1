@@ -11,6 +11,17 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <ImageView
+            android:id="@+id/imageIcon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="256dp"
+            android:layout_marginTop="59dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/change_albumlist_image" />
+
         <TextView
             android:id="@+id/albumlistTitle"
             android:layout_width="wrap_content"

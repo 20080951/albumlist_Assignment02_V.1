@@ -42,6 +42,9 @@ class AlbumlistActivity : AppCompatActivity(), AnkoLogger {
             genre.setText(albumlist.genre)
             artist.setText(albumlist.artist)
             albumlistImage.setImageBitmap(readImageFromPath(this, albumlist.image))
+            if (albumlist.image != null) {
+                chooseImage.setText(R.string.change_albumlist_image)
+            }
             btnAdd.setText(R.string.save_albumlist)
         }
 
@@ -90,6 +93,7 @@ class AlbumlistActivity : AppCompatActivity(), AnkoLogger {
                 if (data != null) {
                     albumlist.image = data.getData().toString()
                     albumlistImage.setImageBitmap(readImage(this,resultCode,data))
+                    chooseImage.setText(R.string.change_albumlist_image)
                 }
             }
         }

@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.card_albumlist.view.description
 import kotlinx.android.synthetic.main.card_albumlist.view.genre
 import kotlinx.android.synthetic.main.card_albumlist.view.artist
 import org.wit.albumlist.R
+import org.wit.albumlist.helpers.readImageFromPath
 import org.wit.albumlist.models.AlbumlistModel
 
 interface AlbumlistListener {
@@ -46,6 +47,8 @@ class AlbumlistAdapter constructor(
             itemView.description.text = albumlist.description
             itemView.artist.text = albumlist.genre
             itemView.artist.text = albumlist.artist
+            itemView.imageIcon.setImageBitmap(readImageFromPath(itemView.context, albumlist.image))
+            itemView.setOnClickListener { listener.onAlbumlistClick(albumlist) }
 
 
 
